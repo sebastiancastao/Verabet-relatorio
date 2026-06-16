@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "PowerShell(if \\(Test-Path \".claude\"\\) { Move-Item \".claude\" \"$env:TEMP\\\\_claude_backup_ana\" -Force; Write-Output \"moved .claude out temporarily\" })",
+      "PowerShell(npm run dev)",
+      "PowerShell(npm install recharts 2>&1)",
+      "PowerShell(npm ls recharts 2>&1)",
+      "PowerShell(npm run build 2>&1)",
+      "PowerShell(npm install recharts@^2.15.0 2>&1)",
+      "Read(//c/Users/sebas/OneDrive/Escritorio/Ana-gaming-relatorio/**)",
+      "Read(//c/Users/sebas/OneDrive/Escritorio/**)",
+      "Read(//c/Users/sebas/Downloads/**)",
+      "Bash(cp \"SeoLab Logo \\(3\\).png\" public/seolab-logo.png)",
+      "Bash(cp \"Captura de pantalla 2026-06-16 065600.png\" public/gsc-performance.png)",
+      "Bash(cp \"Captura de pantalla 2026-06-16 074027.png\" public/gsc-indexing.png)",
+      "Bash(node -e ' *)",
+      "Bash(node -e *)"
+    ]
+  }
+}
