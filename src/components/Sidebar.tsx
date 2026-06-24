@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { sections } from "@/lib/data";
 
-export function Sidebar() {
-  const [active, setActive] = useState(sections[0].id);
+export type SectionItem = { id: string; label: string; num: string };
+
+export function Sidebar({ sections }: { sections: SectionItem[] }) {
+  const [active, setActive] = useState(sections[0]?.id ?? "");
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -22,7 +23,7 @@ export function Sidebar() {
       if (el) observer.observe(el);
     });
     return () => observer.disconnect();
-  }, []);
+  }, [sections]);
 
   const go = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
